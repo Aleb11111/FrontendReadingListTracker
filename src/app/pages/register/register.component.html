@@ -1,0 +1,25 @@
+<!-- register.component.html -->
+
+
+<div class="main">
+  <h1>Register</h1>
+  <h4>Welcome, please register!</h4>
+  <div class="loginForm">
+    <form (ngSubmit)="register()">
+      <h5 style="left: 17%; position: absolute; top: -5%; color: rgba(68,68,68,0.5); font-size: 15px;">Username:</h5>
+      <input class="username" type="text" name="username" [(ngModel)]="user.username" placeholder="YourUserName" required><br>
+      <h5 style="left: 17%; position: absolute; top: 13%; color: rgba(68,68,68,0.5); font-size: 15px;">Email:</h5>
+      <input class="email" type="email" name="email" [(ngModel)]="user.email" placeholder="example.email@something.com" required><br>
+      <h5 style="left: 17%; position: absolute; top: 31%; color: rgba(68,68,68,0.5); font-size: 15px;">Password:</h5>
+      <input class="password" type="password" name="password" [(ngModel)]="user.password" placeholder="passwordPassword" required><br>
+      <h5 style="left: 17%; position: absolute; top: 49%; color: rgba(68,68,68,0.5); font-size: 15px;">Confirm the Password:</h5>
+      <input class="ConfirmPassword" type="password" name="password" [(ngModel)]="user.password" placeholder="passwordPassword" required><br>
+      <div *ngIf="confirmPassword !== user.password" class="status">Passwords do not match</div>
+      <button class="registerButton" type="submit">Register Now</button>
+    </form>
+
+  </div>
+</div>
+<div class="leftGrad">
+  <h1 style="top:40%;font-size: 125px; left: 12%; color: #ffffff;">Welcome!</h1>
+</div>

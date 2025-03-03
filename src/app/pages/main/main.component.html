@@ -1,0 +1,94 @@
+<div>
+  <router-outlet></router-outlet>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+  <div>
+
+    <header>
+      <h1 [style.color]="isConnected ? '#AFD198' : '#865858'"
+          style="font-family: 'Madimi One', sans-serif; font-weight: 400; font-size: 70px; font-style: normal;">Book Library</h1>
+    </header>
+
+    <!-- Form to add a new book -->
+    <div class="add">
+      <label style="text-align: center; font-size: 30px; color:#F5F5F5;">Add a new book!</label>
+      <form #bookForm="ngForm" (ngSubmit)="addBook(bookForm)">
+        <div>
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" style=" color: #CAA6A6; font-size: 20px; font-family: 'Madimi One', sans-serif; font-weight: 400; font-style: normal;" ngModel required>
+        </div>
+        <div>
+          <label for="author">Author:</label>
+          <input type="text" id="author" name="author" ngModel required>
+        </div>
+        <div>
+          <label for="noPages">Number of Pages:</label>
+          <input type="number" id="noPages" name="noPages" ngModel required>
+        </div>
+        <button class="button" style="position:relative; top:60%; left:35%;" type="submit">Add Book</button>
+      </form>
+    </div>
+
+    <div style="position: absolute; right: 37%; top: 40%;">
+      <button class="button" style="position:relative; right: 10%;" type="submit" (click)="filter()">Sort</button>
+    </div>
+    <!-- <div style="position: absolute; right: 37%; top: 80%;">
+      <button class="button" (click)="generateRandomBooks(10)">Generate 10 Random Books</button>
+    </div> -->
+    <div style="position: absolute; right: 37%; top: 60%;">
+      <button class="button" style="position:relative; right: 10%;" type="submit" (click)="navigateToOpenPage()">Start Page</button>
+    </div>
+
+    <div class="chart" style="position: absolute; right: 5%; top: 100%; width:458px; height:490px;">
+      <app-chart></app-chart>
+    </div>
+    <!-- Display list of books -->
+    <div class="list">
+<!--      <div *ngIf="books.length > 0">-->
+      <div>
+        <h2>Books:</h2>
+        <ul>
+          <li *ngFor="let book of books | async">
+            <h3>{{ book?.bookTitle }}</h3>
+            <p>Author: {{ book?.author }}</p>
+            <p>No of Pages: {{ book?.noOfPages }}</p>
+            <!-- Update Form -->
+            <form #updateForm="ngForm" (ngSubmit)="updateBook(book, updateForm)">
+              <div>
+                <label for="updateTitle">New Title:</label>
+                <input type="text" id="updateTitle" name="updateTitle" ngModel>
+              </div>
+              <div>
+                <label for="updateAuthor">New Author:</label>
+                <input type="text" id="updateAuthor" name="updateAuthor" ngModel>
+              </div>
+              <div>
+                <label for="updateNoPages">New Number of Pages:</label>
+                <input type="number" id="updateNoPages" name="updateNoPages" ngModel>
+              </div>
+              <button style="position: relative; left:35%" class="button" type="submit">Update</button>
+            </form>
+            <button style="position: relative; left:35%" class="button" (click)="deleteBook(book.bookTitle)">Delete</button>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+<!--    <div class="list" *ngIf="getlength() === 0">-->
+<!--      <p>No books available.</p>-->
+<!--    </div>-->
+  </div>
+
+
+  <footer>
+
+  </footer>
+  </body>
+
+
+</div>

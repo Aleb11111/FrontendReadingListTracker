@@ -1,0 +1,28 @@
+<!-- register.component.html -->
+
+
+<div class="main">
+  <h1>Login</h1>
+  <h4>Welcome back, please login to your account!</h4>
+  <div class="loginForm">
+    <form (ngSubmit)="login()">
+      <!-- Display success message if login is successful -->
+      <div class="status" *ngIf="loginSuccess">Logged in successfully!</div>
+      <!-- Display error message if login fails -->
+      <div *ngIf="loginError" class="status">{{ loginError }}</div>
+      <h5 style="left: 17%; position: absolute; top: -5%; color: rgba(68,68,68,0.5); font-size: 15px;">Username:</h5>
+      <input class="username" type="text" name="username" [(ngModel)]="user.username" placeholder="YourUserName" required><br>
+      <h5 style="left: 17%; position: absolute; top: 20%; color: rgba(68,68,68,0.5); font-size: 15px;">Email:</h5>
+      <input class="email" type="email" name="email" [(ngModel)]="user.email" placeholder="example.email@something.com" required><br>
+      <h5 style="left: 17%; position: absolute; top: 45%; color: rgba(68,68,68,0.5); font-size: 15px;">Password:</h5>
+      <input class="password" type="password" name="password" [(ngModel)]="user.password" placeholder="passwordPassword" required><br>
+      <button class="registerButton" type="submit">Log In</button>
+    </form>
+
+    <h5 style="left: 60%; position: absolute; top: 80%; color: rgba(68,68,68,0.5); font-size: 15px; color: #AC7D88;" >Don't have an account? <a [routerLink]="'/register'" style="color: #AC7D88;">Register!</a></h5>
+  </div>
+</div>
+<div class="leftGrad">
+  <h1 style="top:25%;font-size: 125px; left: 5%; color: #ffffff;">Welcome</h1>
+  <h1 style="top:45%;font-size: 125px; left: 45%; color: #ffffff;">back!</h1>
+</div>

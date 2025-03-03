@@ -1,0 +1,163 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F5EEE6;
+  overflow: auto;
+  min-height: 200vh;
+}
+
+
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #FFE7E7;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: 50px;
+  color: #865858
+}
+h3 {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  left:20%;
+  font-size: 40px;
+  color:#F5F5F5;
+}
+
+p{
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  position: relative;
+  left:53%;
+  font-size: 20px;
+  color:#F5F5F5;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: #F5F5F5;
+
+}
+
+header {
+  padding: 10px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+input[type="text"],
+input[type="number"] {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #CAA6A6;
+  font-size: 20px;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px; /* Add space between list items */
+}
+
+
+.add{
+  border-radius: 25px 70px;
+
+  position: absolute;
+  top:20%;
+  z-index: 1;
+  left: 65%;
+  background: #E2BFB3;
+  width: 30%;
+  padding: 30px;
+  box-shadow: 15px 20px #CAA6A6;
+}
+
+.chart{
+  border-radius: 25px 70px;
+  z-index: 1;
+  background: #E2BFB3;
+  width: 30%;
+  padding: 30px;
+  box-shadow: 15px 20px #CAA6A6;
+}
+
+.list{
+  border-radius: 25px 70px;
+  position: relative;
+  top:20%;
+  z-index: 1;
+  left: 7%;
+  background: #E2BFB3;
+  width: 40%;
+  padding: 30px;
+  box-shadow: 15px 20px #CAA6A6;
+}
+
+.button {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  width: 170px;
+  outline: none;
+  color: #AC7D88;
+  padding: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
+  border: 2px dashed #AC7D88;
+  border-radius: 15px;
+  background-color: #EADDCA;
+  box-shadow: 0 0 0 4px #EADDCA, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+  transition: .1s ease-in-out, .4s color;
+}
+
+.button:active {
+  transform: translateX(0.1em) translateY(0.1em);
+  box-shadow: 0 0 0 4px #EADDCA, 1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+  /*background-color: #777;*/
+  padding: 50px;
+  text-align: center;
+  color: white;
+}
